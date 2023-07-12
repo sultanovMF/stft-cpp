@@ -11,8 +11,7 @@ overlap = 128
 
 spectogram = stft(signal, nperseg, overlap)
 
-
-freq_samp = get_frequency_samples(nperseg // 2 + 1, fs) #only positive freq
+freq_samp = get_frequency_samples(nperseg, fs) #only positive freq
 time_samp = get_time_samples(spectogram.shape[1], overlap, fs)
 
 plt.pcolormesh(time_samp, freq_samp, np.abs(spectogram), shading='gouraud')
